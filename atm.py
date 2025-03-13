@@ -20,6 +20,14 @@ while True:
             print("숫자 형태가 아닙니다.")
 
     if mode == 2:
-        pass
+        withdraw_amount = input("출금 금액 입력: ")
+        if withdraw_amount.isdigit() and int(withdraw_amount) > 0:
+            if int(withdraw_amount) <= balance:
+                balance -= int(withdraw_amount)
+                print(f'{withdraw_amount}원 출금되었습니다. 현재 잔고는 {balance}원 입니다.')
+            else:
+                print("잔액이 부족합니다.")
+        else:
+            print("숫자 형태가 아닙니다.")
     if mode == 3:
         pass
