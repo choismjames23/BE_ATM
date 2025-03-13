@@ -1,3 +1,6 @@
+#영수증 기능 구현을 위한 빈 리스트 선언
+receipts = []
+
 #balance : 통장에 들어있는 기본 금액을 담는 변수
 
 #3000원 입금
@@ -16,6 +19,10 @@ while True:
         if deposit_amount.isdigit() and int(deposit_amount) > 0:
             balance += int(deposit_amount)
             print(f'{deposit_amount}원 입금되었습니다. 현재 잔고는 {balance}원 입니다.')
+
+            #영수증에 데이터 넣기 / 영수증 정보가 바뀌지 않도록 튜플형태로 저장
+            receipts.append(("입금", deposit_amount, balance))
+
         else:
             print("숫자 형태가 아닙니다.")
 
@@ -25,9 +32,18 @@ while True:
             if int(withdraw_amount) <= balance:
                 balance -= int(withdraw_amount)
                 print(f'{withdraw_amount}원 출금되었습니다. 현재 잔고는 {balance}원 입니다.')
+
+                #영수증에 데이터 넣기 / 영수증 정보가 바뀌지 않도록 튜플형태로 저장
+                receipts.append(("출금", withdraw_amount, balance))
             else:
                 print("잔액이 부족합니다.")
         else:
             print("숫자 형태가 아닙니다.")
     if mode == 3:
-        pass
+        if receipts:
+            print("=====영수증=====")
+            for content in receipts:
+                print(f'{content[0]} : {content[1]}원 | 잔액 : {content[2]}원')
+        
+        else:
+            print("영수증이 비었습니다.")
