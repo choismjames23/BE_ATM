@@ -31,7 +31,7 @@ Python 3.x가 설치되어 있는지 확인합니다.
 
 🧩 사용 화면
 
-[Image](https://github.com/user-attachments/assets/ad211801-6e27-448c-8b78-0c32e5da26c0)
+![Image](https://github.com/user-attachments/assets/88e897ef-a83b-402b-a3a8-0355454c7a58)
 
 🐛 에러 처리
 입력 값이 숫자가 아니거나 음수일 경우, 경고 메시지가 출력됩니다.
